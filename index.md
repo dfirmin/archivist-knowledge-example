@@ -4,6 +4,10 @@ okf_version: "0.2"
 
 # Subject areas
 
+## Case Handling Process
+
+* [Case Handling Process](knowledge/subject-areas/case-handling-process/overview.md) - This subject area documents how support cases are worked, not a data product. Confidence 0.82.
+
 ## Claims
 
 * [CLAIM_PMT_SV](knowledge/subject-areas/claims/business-views/CLAIM_PMT_SV/overview.md) - CLAIM_PMT_SV has one row per payment transaction, and its PMT_TYPE_CD codes are L, E and S. Confidence 0.30.

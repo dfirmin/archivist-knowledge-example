@@ -2,6 +2,7 @@
 
 ## 2026-10-06
 
+* **Creation**: [Case Handling Process](/knowledge/subject-areas/case-handling-process/overview.md) — how support cases are worked: the process framework, components and roles, not a data product.
 * **Creation**: [Customer Care](/knowledge/subject-areas/customer-care/overview.md) — the customer care subject area: contacts, cases and how cases move from open to closed, loaded nightly from Sample CRM [Customer Care].
 * **Quarantined**: [Salvage assignment](/quarantine/br-clm-031-salvage-notes.md) — The document states no line of business ("LOB to be confirmed with product"), so the required okfx_line_of_business has no value [Claims].
 * **Creation**: [CLAIM_PMT_SV](/knowledge/subject-areas/claims/business-views/CLAIM_PMT_SV/overview.md) — one row per payment transaction, with the PMT_TYPE_CD codes L, E and S [Claims].
