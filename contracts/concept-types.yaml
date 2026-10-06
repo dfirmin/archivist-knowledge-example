@@ -1,0 +1,148 @@
+version: 1
+concept_types:
+  business-view-group-overview:
+    type: Business View Group Overview
+    description: Business context shared by a named group of physical views.
+    authored: true
+    structures: [data-view-group]
+    path: "knowledge/subject-areas/{okfx_subject_area}/business-views/{title}/overview.md"
+    tags: ["{archetype}", "{okfx_subject_area}", business-view-group-overview]
+    fields:
+      okfx_subject_area:
+        description: The subject-area slug.
+        required: true
+        shape: string
+        from: inventory subject_area of the document's views; must be an owners slug
+      okfx_physical_views:
+        description: Every physical view the group documents, as named in the source.
+        required: true
+        shape: list
+        from: the document title and body (`CUSTCASE (Customer Case) - Financial Fields` names CUSTCASE), each confirmed in inventory
+      okfx_code_repo:
+        description: Repo(s) whose code builds the views.
+        shape: string-or-list
+        from: |
+          The non-empty inventory source_repo values of every view: all identical → that URL;
+          two or more distinct → a sorted list of the unique URLs; all empty → null.
+      okfx_product_owner:
+        description: Owner of record.
+        required: true
+        shape: string
+        from: owners — the first product_owners email of the subject area
+    # One group per set of views: a document naming any view an existing group documents
+    # updates that group, whatever business name its title uses.
+    identity:
+      fields: [okfx_physical_views]
+      match: any
+      guidance: Compare view names case-insensitively; a view and its _INCRMTL_ sibling are the same group.
+    companions:
+      - concept_type: physical-view
+        for_each: okfx_physical_views
+        path: "{item_lower}.md"
+        guidance: Frontmatter only (type, title, status, tags [view]); the body after the closing --- is empty.
+    guidance: |
+      {archetype} in tags is the subject area's archetype from owners. The title is the business
+      name, a concrete folder string such as "Customer Case".
+
+  subject-area-overview:
+    type: Subject Area Overview
+    description: Business context spanning one subject area.
+    authored: true
+    structures: [data-subject-area, process-subject-area]
+    # Several structures, chosen by looking something up: the subject area's archetype in the
+    # owners reference data. Every overview in one subject area therefore gets the same structure
+    # (compare examples/handbook, where the rule reads each document's content instead).
+    structure_rule: Use the structure named for the subject area's archetype in owners (data → data-subject-area, process → process-subject-area).
+    path: "knowledge/subject-areas/{okfx_subject_area}/overview.md"
+    tags: ["{archetype}", "{okfx_subject_area}", subject-area-overview]
+    fields:
+      okfx_subject_area:
+        description: The subject-area slug.
+        required: true
+        from: the subject area the document describes; must be an owners slug
+      okfx_product_owner:
+        description: Owner of record.
+        required: true
+        from: owners — the first product_owners email of the subject area
+    identity:
+      fields: [okfx_subject_area]     # one overview per subject area
+
+  metric-definition:
+    type: Metric Definition
+    description: How one approved metric is defined and computed.
+    authored: true
+    structures: [ratio-metric, count-metric]
+    # Chosen by the document's content, per document (compare subject-area-overview, which looks
+    # its structure up in reference data).
+    structure_rule: >-
+      Use ratio-metric when the definition divides one quantity by another (a rate, ratio or
+      percentage). Use count-metric when it counts or sums one thing.
+    path: "knowledge/subject-areas/{okfx_subject_area}/metrics/{title}.md"
+    tags: ["{archetype}", "{okfx_subject_area}", metric-definition]
+    fields:
+      okfx_metric_code:
+        description: The approved metric code.
+        required: true
+        shape: string
+        from: metrics — the metric_code whose metric_name or code the document names
+      okfx_subject_area:
+        description: The subject-area slug.
+        required: true
+        shape: string
+        from: metrics — the subject_area of that metric
+      okfx_source_views:
+        description: Views the definition names, each confirmed in inventory.
+        shape: list
+        from: the document body
+      okfx_product_owner:
+        description: Owner of record.
+        required: true
+        shape: string
+        from: owners — the first product_owners email of the subject area
+    # The metric code is the identity: "Loss Ratio", "LR" and "loss ratio (earned)" are one metric.
+    identity:
+      fields: [okfx_metric_code]
+    guidance: The title is the metric_name from metrics, exactly.
+
+  business-rule:
+    type: Business Rule
+    description: One approved business rule for one line of business.
+    authored: true
+    structures: [business-rule]
+    path: "knowledge/subject-areas/{okfx_subject_area}/rules/{okfx_line_of_business}/{okfx_rule_id}.md"
+    tags: ["{archetype}", "{okfx_subject_area}", business-rule, "{okfx_line_of_business}"]
+    fields:
+      okfx_rule_id:
+        description: The rule identifier, as the document states it (BR-<area>-<number>).
+        required: true
+        shape: string
+        from: the document title or body
+      okfx_line_of_business:
+        description: The line of business the rule applies to.
+        required: true
+        shape: string
+        from: lines-of-business — the key of the line the document states; never inferred from the rule's subject
+      okfx_subject_area:
+        description: The subject-area slug.
+        required: true
+        shape: string
+        from: the subject area the document names or whose views it names (inventory); must be an owners slug
+      okfx_product_owner:
+        description: Owner of record.
+        required: true
+        shape: string
+        from: owners — the first product_owners email of the subject area
+    # One rule id can exist per line of business (BR-CLM-014 for auto and for home are two rules).
+    identity:
+      fields: [okfx_rule_id, okfx_line_of_business]
+      match: all
+      guidance: Rule ids compare ignoring case and spaces (BR-CLM-014 = br clm 014).
+    guidance: The title is the rule's name from the document, without its id.
+
+  physical-view:
+    type: View
+    description: A physical view represented by a catalog concept.
+
+  reference:
+    type: Reference
+    description: Supporting documentation about the knowledge bundle.

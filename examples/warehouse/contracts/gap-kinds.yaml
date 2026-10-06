@@ -1,0 +1,57 @@
+version: 1
+kinds:
+  - id: missing_section
+    applies_to: [business-view-group-overview, subject-area-overview, metric-definition, business-rule]
+    definition: A required section has no substantive content.
+    origins: [author, documentation]
+    context: [the concept body, the cited sources]
+    detection:
+      - A required author-owned heading from the structure is absent, or holds only an "Awaiting source material" stub
+      - Placeholder-owned sections (Glossary) and enricher-owned sections are never a missing section
+    priority: medium
+  - id: undefined_acronym
+    applies_to: [business-view-group-overview]
+    definition: An acronym or abbreviation is used without a definition.
+    origins: [author, documentation]
+    context: [the concept body, the cited sources, the glossary and naming-standards registries]
+    uses: [glossary, naming-standards]
+    detection:
+      - The body uses an acronym that no registry and no cited source expands
+      - A cited source expands it but the concept leaves it unexpanded (origin author); an expansion only a registry holds is origin documentation, because registry wording never enters the body
+      - An ordinary English word used as an identifier segment (CASE, STATUS, ID, CODE, DATE) is not an acronym
+      - A purely technical suffix the naming standards list as a convention is not undefined
+    priority: low
+  - id: missing_code_value_semantics
+    applies_to: [business-view-group-overview]
+    definition: Code values are listed without their business meaning.
+    origins: [author, documentation]
+    context: [Code Set Information, Code-Extracted Logic, the cited sources]
+    detection:
+      - A code column's values appear without what each value means
+    priority: medium
+  - id: unregistered_source_system
+    applies_to: [business-view-group-overview]
+    definition: Data Sources & Ingestion Route names no registered source system.
+    origins: [author, documentation]
+    context: [Data Sources & Ingestion Route, the source-systems registry]
+    uses: [source-systems]
+    detection:
+      - None of the systems registered for the concept's subject area is named
+    priority: high
+  - id: missing_formula_part
+    applies_to: [metric-definition]
+    definition: A ratio metric does not say what its numerator or denominator is.
+    origins: [author, documentation]
+    context: [okfx_structure, Numerator, Denominator, the cited sources]
+    detection:
+      - Only ratio-metric definitions are judged; a count-metric is absent by definition
+      - Numerator or Denominator is empty, a stub, or names a quantity without saying what is included
+    priority: high
+  - id: missing_effective_date
+    applies_to: [business-rule]
+    definition: A business rule, or a change to it, has no date it takes effect.
+    origins: [author, documentation]
+    context: [Effective Dates, the cited sources]
+    detection:
+      - The rule, or any change the concept records, has no effective date in Effective Dates
+    priority: medium
