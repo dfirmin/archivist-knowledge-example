@@ -14,6 +14,7 @@ okf_version: "0.2"
 
 ## Customer Care
 
+* [Customer Care](knowledge/subject-areas/customer-care/overview.md) - The customer care subject area covers customers contacting the company for help, including contacts, cases, and how cases move from open to closed. Confidence 0.85.
 * [Customer Case](knowledge/subject-areas/customer-care/business-views/Customer%20Case/overview.md) - CUSTCASE holds one row per customer support case opened in Sample CRM. Confidence 0.40.
 
 ## Sources
