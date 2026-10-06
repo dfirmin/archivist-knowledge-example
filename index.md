@@ -7,6 +7,7 @@ okf_version: "0.2"
 ## Claims
 
 * [Claim Header](knowledge/subject-areas/claims/business-views/Claim%20Header/overview.md) - CLAIM_HDR_SV holds one row per claim reported to the Sample Claims Platform and is the starting point for claim counts. Confidence 0.60.
+* [Total Loss Determination](knowledge/subject-areas/claims/rules/auto/BR-CLM-014.md) - Declares a personal auto vehicle a total loss when estimated repair cost reaches the threshold share of its actual cash value. Confidence 1.00.
 
 ## Customer Care
 
