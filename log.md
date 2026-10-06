@@ -2,6 +2,7 @@
 
 ## 2026-10-06
 
+* **Creation**: [Open Claim Count](/knowledge/subject-areas/claims/metrics/Open%20Claim%20Count.md) — OPEN_CLAIM_CNT, claims in open or reopened status by line of business, with the exclusion window moving from 24 to 48 hours [Claims].
 * **Creation**: [Loss Ratio](/knowledge/subject-areas/claims/metrics/Loss%20Ratio.md) — LOSS_RATIO, incurred losses over earned premium (denominator corrected from written premium), monthly by line of business [Claims].
 * **Creation**: [Total Loss Determination](/knowledge/subject-areas/claims/rules/auto/BR-CLM-014.md) — BR-CLM-014, personal auto total loss threshold (75%, 70% from 2027-01-01) and leased-vehicle exception [Claims].
 * **Creation**: [Customer Case](/knowledge/subject-areas/customer-care/business-views/Customer%20Case/overview.md) — CUSTCASE and CUSTCASE_INCRMTL_SV, one row per customer support case, with code sets and timezone notes [Customer Care].
