@@ -1,0 +1,50 @@
+version: 1
+concept_types:
+  policy:
+    type: Policy
+    description: A rule people must follow, who it applies to, and its exceptions.
+    authored: true
+    structures: [policy]                       # one structure: no rule needed
+    path: "knowledge/policies/{title}.md"
+    tags: [policy, "{okfx_team}"]
+    fields:
+      okfx_team:
+        description: The owning team's key.
+        required: true
+        from: teams — the team the document names as owner
+    identity:
+      fields: [title]
+      guidance: >-
+        One policy per subject. Titles match ignoring case, dates, version numbers and words like
+        "policy", "update" or "2026" (the Remote Work Policy and "Remote work policy – 2026
+        update" are one policy).
+
+  runbook:
+    type: Runbook
+    description: How to carry out an operational task.
+    authored: true
+    structures: [routine-procedure, incident-response]
+    # Several structures, so a rule says which one fits THIS document. Decided by content, per
+    # document: two runbooks from the same team can get different structures.
+    structure_rule: >-
+      Use incident-response when the document is about responding to an outage, alert or other
+      unplanned failure. Use routine-procedure for planned, repeatable work such as deployments,
+      rotations or maintenance.
+    path: "knowledge/runbooks/{title}.md"
+    tags: [runbook, "{okfx_team}"]
+    fields:
+      okfx_team:
+        description: The owning team's key.
+        required: true
+        from: teams — the team the document names as owner
+      okfx_on_call:
+        description: Where to escalate.
+        from: teams — the owning team's on_call value
+    identity:
+      fields: [title, okfx_team]
+      match: all
+      guidance: >-
+        The same task or incident for the same team. Titles match when they name the same system
+        and situation, whatever the wording: "Primary Database Outage Response" and "Database
+        Primary Outage Runbook" are one runbook; "Deploying the Web App" and "Rolling Back the Web
+        App" are two.
