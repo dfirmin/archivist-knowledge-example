@@ -8,6 +8,10 @@ okf_version: "0.2"
 
 * [Claim Header](knowledge/subject-areas/claims/business-views/Claim%20Header/overview.md) - CLAIM_HDR_SV holds one row per claim reported to the Sample Claims Platform and is the starting point for claim counts. Confidence 0.60.
 
+## Customer Care
+
+* [Customer Case](knowledge/subject-areas/customer-care/business-views/Customer%20Case/overview.md) - CUSTCASE holds one row per customer support case opened in Sample CRM. Confidence 0.40.
+
 ## Sources
 
 - Waiting to be authored: `sources/inbox/`
