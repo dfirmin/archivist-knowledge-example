@@ -2,6 +2,7 @@
 
 ## 2026-10-06
 
+* **Quarantined**: [Salvage assignment](/quarantine/br-clm-031-salvage-notes.md) — The document states no line of business ("LOB to be confirmed with product"), so the required okfx_line_of_business has no value [Claims].
 * **Creation**: [CLAIM_PMT_SV](/knowledge/subject-areas/claims/business-views/CLAIM_PMT_SV/overview.md) — one row per payment transaction, with the PMT_TYPE_CD codes L, E and S [Claims].
 * **Creation**: [Open Claim Count](/knowledge/subject-areas/claims/metrics/Open%20Claim%20Count.md) — OPEN_CLAIM_CNT, claims in open or reopened status by line of business, with the exclusion window moving from 24 to 48 hours [Claims].
 * **Creation**: [Loss Ratio](/knowledge/subject-areas/claims/metrics/Loss%20Ratio.md) — LOSS_RATIO, incurred losses over earned premium (denominator corrected from written premium), monthly by line of business [Claims].
