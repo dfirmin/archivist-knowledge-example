@@ -1,7 +1,7 @@
 # Contract index for a sample data-warehouse knowledge target.
 # Every path is relative to contracts/. Declare only what the pipelines use.
 version: 1
-engine: ceca4440c830391a89668ec9289a87b739653d91
+engine: 66698d7c575ef3cea96a999cc2d2c908ff181e69
 slug: archivist-knowledge-example
 name: Archivist Knowledge Example
 description: Business-view knowledge for a sample warehouse, authored from catalog documents.
