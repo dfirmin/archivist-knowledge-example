@@ -2,6 +2,7 @@
 
 ## 2026-10-07
 
+* **Creation**: [Loss Ratio](/knowledge/subject-areas/claims/metrics/Loss%20Ratio.md) — Loss ratio measures how much of the premium is paid back out in losses, reported monthly by line of business.
 * **Creation**: [Customer Care](/knowledge/subject-areas/customer-care/overview.md) — The customer care subject area covers customers contacting the company for help, including contacts and cases.
 * **Creation**: [Customer Case](/knowledge/subject-areas/customer-care/business-views/Customer%20Case/overview.md) — CUSTCASE holds one row per customer support case opened in Sample CRM.
 * **Creation**: [CLAIM_PMT_SV](/knowledge/subject-areas/claims/business-views/CLAIM_PMT_SV/overview.md) — CLAIM_PMT_SV holds one row per payment transaction, with PMT_TYPE_CD values L, E and S.
