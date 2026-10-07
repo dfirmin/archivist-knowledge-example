@@ -2,6 +2,7 @@
 
 ## 2026-10-07
 
+* **Creation**: [Open Claim Count](/knowledge/subject-areas/claims/metrics/Open%20Claim%20Count.md) — Open Claim Count is the number of claims in CLAIM_HDR_SV with status O or R, as counted for the Monday deck.
 * **Creation**: [Loss Ratio](/knowledge/subject-areas/claims/metrics/Loss%20Ratio.md) — Loss ratio measures how much of the premium is paid back out in losses, reported monthly by line of business.
 * **Creation**: [Customer Care](/knowledge/subject-areas/customer-care/overview.md) — The customer care subject area covers customers contacting the company for help, including contacts and cases.
 * **Creation**: [Customer Case](/knowledge/subject-areas/customer-care/business-views/Customer%20Case/overview.md) — CUSTCASE holds one row per customer support case opened in Sample CRM.
