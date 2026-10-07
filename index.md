@@ -2,9 +2,11 @@
 okf_version: "0.2"
 ---
 
-# Concepts
+# Subject areas
 
-No concepts yet.
+## Claims
+
+* [Total Loss Determination](knowledge/subject-areas/claims/rules/auto/BR-CLM-014.md) - Business rule BR-CLM-014 declares a personal auto vehicle a total loss when repair cost reaches a threshold share of actual cash value. Confidence 1.0.
 
 ## Sources
 
