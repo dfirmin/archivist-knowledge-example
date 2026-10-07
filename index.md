@@ -14,6 +14,10 @@ okf_version: "0.2"
 * [Claim Header](knowledge/subject-areas/claims/business-views/Claim%20Header/overview.md) - CLAIM_HDR_SV holds one row per claim reported to the Sample Claims Platform. Confidence 0.65.
 * [Total Loss Determination](knowledge/subject-areas/claims/rules/auto/BR-CLM-014.md) - Business rule BR-CLM-014 declares a personal auto vehicle a total loss when repair cost reaches a threshold share of actual cash value. Confidence 1.0.
 
+## Customer Care
+
+* [Customer Case](knowledge/subject-areas/customer-care/business-views/Customer%20Case/overview.md) - CUSTCASE holds one row per customer support case opened in Sample CRM. Confidence 0.58.
+
 ## Sources
 
 - Waiting to be authored: `sources/inbox/`
