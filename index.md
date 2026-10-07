@@ -10,6 +10,7 @@ okf_version: "0.2"
 
 ## Claims
 
+* [CLAIM_PMT_SV](knowledge/subject-areas/claims/business-views/CLAIM_PMT_SV/overview.md) - CLAIM_PMT_SV holds one row per payment transaction, with PMT_TYPE_CD values L, E and S. Confidence 0.65.
 * [Claim Header](knowledge/subject-areas/claims/business-views/Claim%20Header/overview.md) - CLAIM_HDR_SV holds one row per claim reported to the Sample Claims Platform. Confidence 0.65.
 * [Total Loss Determination](knowledge/subject-areas/claims/rules/auto/BR-CLM-014.md) - Business rule BR-CLM-014 declares a personal auto vehicle a total loss when repair cost reaches a threshold share of actual cash value. Confidence 1.0.
 

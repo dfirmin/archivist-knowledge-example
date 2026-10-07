@@ -2,6 +2,7 @@
 
 ## 2026-10-07
 
+* **Creation**: [CLAIM_PMT_SV](/knowledge/subject-areas/claims/business-views/CLAIM_PMT_SV/overview.md) — CLAIM_PMT_SV holds one row per payment transaction, with PMT_TYPE_CD values L, E and S.
 * **Creation**: [Claim Header](/knowledge/subject-areas/claims/business-views/Claim%20Header/overview.md) — CLAIM_HDR_SV holds one row per claim reported to the Sample Claims Platform.
 * **Creation**: [Case Handling Process](/knowledge/subject-areas/case-handling-process/overview.md) — Describes how support cases are worked, as a process rather than a data product.
 * **Quarantined**: [Salvage assignment](/quarantine/br-clm-031-salvage-notes.md) — 
